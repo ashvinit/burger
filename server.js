@@ -10,3 +10,8 @@ app.use(express.static("public"));
 //Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//Import routes and give the server access to them.
+var routes = require(".controllers/burgerController.js");
+
+app.use(routes);
