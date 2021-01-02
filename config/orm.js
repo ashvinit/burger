@@ -1,6 +1,5 @@
 // Import MySQL connecion.
 var connection = require("./connection.js");
-const { query } = require("express");
 
 //Helper function for SQL syntax
 function printQuestionMarks(num) {

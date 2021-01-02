@@ -1,3 +1,5 @@
+const path = require('path');
+
 var express = require("express");
 
 var router = express.Router();
@@ -6,13 +8,13 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
-    res.sendFile(path.join(_dirname, "public/index.html"));
+    res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 //create all our routes and set up logic within those routes where required
 router.get("/burgers", function(req, res) {
     burger.all(function(data) {
-        res.json({ cats: data });
+        res.json({ burgers: data });
     });
 });
 
