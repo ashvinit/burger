@@ -66,11 +66,11 @@ $(function () {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
-        var newCat = {
-            name: $("#ca")
+        var newBurger = {
+            burger_name: $("#bu")
                 .val()
                 .trim(),
-            sleepy: $("[name=sleepy]:checked")
+            devoured: $("[burger_name=devoured]:checked")
                 .val()
                 .trim()
         };
