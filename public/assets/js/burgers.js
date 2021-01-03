@@ -76,28 +76,28 @@ $(function () {
         };
 
         // Send the POST request.
-        $.ajax("/cats", {
+        $.ajax("/burgers", {
             type: "POST",
-            data: JSON.stringify(newCat),
+            data: JSON.stringify(newBurger),
             dataType: 'json',
             contentType: 'application/json'
         }).then(function () {
-            console.log("created new cat");
+            console.log("created new burger");
             // Reload the page to get the updated list
             location.reload();
         });
     });
 
-    $(document).on("click", ".delete-cat", function (event) {
-        var id = $(this).data("id");
+    // $(document).on("click", ".delete-cat", function (event) {
+    //     var id = $(this).data("id");
 
-        // Send the DELETE request.
-        $.ajax("/cats/" + id, {
-            type: "DELETE"
-        }).then(function () {
-            console.log("deleted cat", id);
-            // Reload the page to get the updated list
-            location.reload();
-        });
-    });
+    //     // Send the DELETE request.
+    //     $.ajax("/cats/" + id, {
+    //         type: "DELETE"
+    //     }).then(function () {
+    //         console.log("deleted cat", id);
+    //         // Reload the page to get the updated list
+    //         location.reload();
+    //     });
+    // });
 });
