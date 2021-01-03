@@ -3,25 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-    <title>MVC With Cats!</title>
+    <title>Eat-Da-Burger</title>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/assets/js/burgers.js"></script>
   </head>
+
   <body>
-    <h1>Eat-Da-Burger!</h1>
+    <h1 style="text-align:center;font-family:Verdana;letter-spacing:5px;color:#FF1493;">Eat-Da-Burger</h1>
 
-    <ul id="uneatenBurgers"></ul>
 
-    <h2>Cats that are sleepy!</h2>
+    <img src="/assets/images/burger.png" alt="" width="200" height="200" style="display: block; margin-left: auto; margin-right: auto;">
+
+    <ul id="burgerName"></ul>
+
+    <h2>Uneaten Burgers</h2>
 
     <ul id="sleepyCats"></ul>
 
     <h2>Add a Cat</h2>
-    <form class="create-form">
-      <div class="form-group">
-        <label for="ca">Cat Name:</label>
-        <input type="text" id="ca" name="name" />
-      </div>
+
 
       <div class="form-group">
         <label for="sleepy">Sleepy?</label><br />
@@ -29,7 +29,15 @@
         <input type="radio" name="sleepy" value="0" /> Devouvered
       </div>
 
-      <button type="submit">Submit</button>
+      <form class="create-form">
+        <div class="form-group">
+          <input type="text" id="ca" name="name" style="display: block; margin-left: auto; margin-right: auto; width: 300px; height: 30px;"/>
+          <h6 style="text-align:center;font-family:Verdana;color:#FF1493;">Enter a burger you wnat to eat and then click the "Submit" button.</h6>
+        </div>
+      <button type="submit" style="color: #FF1493; display: block; margin-left: auto; margin-right: auto;">Submit</button>
     </form>
   </body>
 </html>
+
+
+

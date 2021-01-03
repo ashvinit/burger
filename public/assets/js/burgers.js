@@ -3,19 +3,19 @@ $(function () {
     $.ajax("/burgers", {
         type: "GET"
     }).then(function (data) {
-        var uneaten = $("#uneaten");
-        var eaten = $("#eaten");
+        var uneatenElem = $("#uneaten");
+        var eatenElem = $("#eaten");
 
-        var cats = data.cats;
-        var len = cats.length;
+        var burgers = data.burgers;
+        var len = burgers.length;
 
         for (var i = 0; i < len; i++) {
             var new_elem =
                 "<li>" +
-                cats[i].id +
-                ". " + cats[i].name +
-                "<button class='change-sleep' data-id='" +
-                cats[i].id +
+                burgers[i].id +
+                ". " + burgers[i].name +
+                "<button class='change-devour' data-id='" +
+                burgers[i].id +
                 "' data-newsleep='" +
                 !cats[i].sleepy +
                 "'>";
