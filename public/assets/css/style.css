@@ -2,6 +2,20 @@ body {
     background-color: powderblue;
 }
 
+#burger-ctn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.burger-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    text-align: center;
+}
+
 li {
     padding: 5px;
     margin: 5px;
