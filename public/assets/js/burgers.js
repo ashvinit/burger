@@ -13,50 +13,50 @@ $(function () {
             var new_elem =
                 "<li>" +
                 burgers[i].id +
-                ". " + burgers[i].name +
-                "<button class='change-devour' data-id='" +
+                ". " + burgers[i].burger_name +
+                "<button class='change-devoured' data-id='" +
                 burgers[i].id +
-                "' data-newsleep='" +
-                !cats[i].sleepy +
+                "' data-devoured='" +
+                !burgers[i].devoured +
                 "'>";
 
-            if (cats[i].sleepy) {
-                new_elem += "SLEEP TIME!";
+            if (burgers[i].devoured) {
+                new_elem += "BURGER TIME!";
             } else {
-                new_elem += "WAKE UP!";
+                new_elem += "YUMM!";
             }
 
             new_elem += "</button>";
 
             new_elem +=
-                "<button class='delete-cat' data-id='" +
-                cats[i].id +
+                "<button class='delete-burger' data-id='" +
+                burgers[i].id +
                 "'>DELETE!</button></li>";
 
-            if (cats[i].sleepy) {
-                sleepyElem.append(new_elem);
+            if (burgers[i].devoured) {
+                uneatenElem.append(new_elem);
             } else {
-                nosleepyElem.append(new_elem);
+                eatenElem.append(new_elem);
             }
         }
     });
 
-    $(document).on("click", ".change-sleep", function (event) {
+    $(document).on("click", ".change-devoured", function (event) {
         var id = $(this).data("id");
-        var newSleep = $(this).data("newsleep") === true;
+        var newDevoured = $(this).data("newdevoured") === true;
 
-        var newSleepState = {
-            sleepy: newSleep
+        var newDevouredState = {
+            devoured: newDevoured
         };
 
         // Send the PUT request.
-        $.ajax("/cats/" + id, {
+        $.ajax("/burgers/" + id, {
             type: "PUT",
-            data: JSON.stringify(newSleepState),
+            data: JSON.stringify(newDevouredState),
             dataType: 'json',
             contentType: 'application/json'
         }).then(function () {
-            console.log("changed sleep to", newSleep);
+            console.log("changed devoured to", newDevoured);
             // Reload the page to get the updated list
             location.reload();
         });
@@ -67,12 +67,11 @@ $(function () {
         event.preventDefault();
 
         var newBurger = {
-            burger_name: $("#bu")
+            burger_name: $("#ca")
                 .val()
                 .trim(),
             devoured: $("[burger_name=devoured]:checked")
                 .val()
-                .trim()
         };
 
         // Send the POST request.
@@ -88,16 +87,16 @@ $(function () {
         });
     });
 
-    // $(document).on("click", ".delete-cat", function (event) {
-    //     var id = $(this).data("id");
+    $(document).on("click", ".delete-bruger", function (event) {
+        var id = $(this).data("id");
 
-    //     // Send the DELETE request.
-    //     $.ajax("/cats/" + id, {
-    //         type: "DELETE"
-    //     }).then(function () {
-    //         console.log("deleted cat", id);
-    //         // Reload the page to get the updated list
-    //         location.reload();
-    //     });
-    // });
+        // Send the DELETE request.
+        $.ajax("/burgers/" + id, {
+            type: "DELETE"
+        }).then(function () {
+            console.log("deleted burger", id);
+            // Reload the page to get the updated list
+            location.reload();
+        });
+    });
 });
