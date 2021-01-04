@@ -15,7 +15,7 @@ $(function () {
             var new_elem =
                 "<li class='burger-item'>" +
                 burgers[i].burger_name +
-                "<div><button class='change-devoured' style='color: #FF1493;' data-id='" +
+                "<div><button class='change-devoured' style='color: #FF1493; margin-left: 5px;' data-id='" +
                 burgers[i].id +
                 "' data-devoured='" +
                 !burgers[i].devoured +
@@ -30,7 +30,7 @@ $(function () {
             new_elem += "</button>";
 
             new_elem +=
-                "<button class='delete-burger' style='color: #FF1493;' data-id='" +
+                "<button class='delete-burger' style='color: #FF1493; margin-left: 5px;' data-id='" +
                 burgers[i].id +
                 "'>DELETE!</button></div></li>";
 
