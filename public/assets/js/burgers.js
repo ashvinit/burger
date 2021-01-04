@@ -15,22 +15,22 @@ $(function () {
             var new_elem =
                 "<li class='burger-item'>" +
                 burgers[i].burger_name +
-                "<div><button class='change-devoured' data-id='" +
+                "<div><button class='change-devoured' style='color: #FF1493;' data-id='" +
                 burgers[i].id +
                 "' data-devoured='" +
                 !burgers[i].devoured +
                 "'>";
 
             if (burgers[i].devoured) {
-                new_elem += "BURGER TIME!";
+                new_elem += "One More?";
             } else {
-                new_elem += "YUMM!";
+                new_elem += "Devour It!";
             }
 
             new_elem += "</button>";
 
             new_elem +=
-                "<button class='delete-burger' data-id='" +
+                "<button class='delete-burger' style='color: #FF1493;' data-id='" +
                 burgers[i].id +
                 "'>DELETE!</button></div></li>";
 
