@@ -1,6 +1,23 @@
-# burger
 
-Markup: 
+# BurgersApp
+
+![homepage](public/assets/images/homepage.png)
+
+
+## Description
+
+This app allows users to add any type of burger they choose to eat. They have the option to eat the burger or delete the burger. The eaten burger will be added to a new list. From the eaten list, the burgers can be added back to the uneaten list or they can be deleted. The burgers are saved to the MySQL database. Whether they have been eaten or not are stored using a boolean.
+
+
+## Table of Contents
+
+* [Process](#process)
+* [Installation](#installation)
+* [Questions](#questions)
+
+
+## Process
+
 1. Installed all the packages necessary for this applciation
 
 2. Created all the directories and files needed for this application
@@ -25,4 +42,17 @@ Markup:
 
 9. Imported express and burger.js from models directory to burgerController.js
 
+
+## Installation
+
+The command that should be run to install dependencies is: 
+`npm i` and `npm start`
+
+
+## Questions
+
+If you have any further questions regarding this project, please feel free to contact.
+
+GitHub Username: ashvinit
+Email Address: ashvinithomas@gmail.com
 
